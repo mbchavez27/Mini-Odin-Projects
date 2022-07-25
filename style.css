@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
 body {
+  font-family: "Nunito Sans", sans-serif;
   background-color: #f2f2f2;
 }
 
+/*Nav Bar*/
 header {
   background-color: #006994;
   display: flex;
@@ -14,4 +18,70 @@ header {
 a {
   color: #3cb371;
   text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #4bc7cf;
+  transition: 0.2s;
+}
+
+/*Collection*/
+.projectContainer {
+  display: flex;
+  justify-content: center;
+}
+/*Card*/
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-color: #006994;
+  color: #f2f2f2;
+  display: flex;
+  margin: 2em;
+  transition: 0.2s;
+}
+
+.projectCard:hover {
+  width: 23%;
+  transition: 0.2s;
+}
+
+.projectCard img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardText {
+  padding: 1em;
+  text-align: center;
+}
+
+.cardText h2 {
+  font-weight: bold;
+  font-size: 2em;
+  padding-bottom: 0.5em;
+}
+
+.cardText a {
+  color: inherit;
+}
+.cardText p {
+  font-size: 300;
+  padding-bottom: 0.5em;
+}
+
+@media screen and (max-width: 600px) {
+  .projectContainer {
+    flex-direction: column;
+  }
+  .projectCard {
+    width: 60%;
+    transition: 0.2s;
+  }
+  .projectCard:hover {
+    width: 63%;
+    transition: 0.2s;
+  }
 }
