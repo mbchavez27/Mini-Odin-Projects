@@ -1,2 +1,2 @@
-# Mini-JS-Projects
-A Collection of Mini JS Projects 
+# Mini-Odin-Projects
+A Collection of Mini Odin Projects 
