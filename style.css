@@ -1,0 +1,17 @@
+body {
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color: #006994;
+  display: flex;
+  justify-content: center;
+  font-size: 2.5em;
+  padding: 0.8em 0.5em;
+  color: #9fe2bf;
+}
+
+a {
+  color: #3cb371;
+  text-decoration: none;
+}
