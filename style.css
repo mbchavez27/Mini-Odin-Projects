@@ -8,6 +8,7 @@ body {
 /*Nav Bar*/
 header {
   background-color: #006994;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   font-size: 2.5em;
@@ -40,11 +41,14 @@ a:hover {
   color: #f2f2f2;
   display: flex;
   margin: 2em;
+  margin-top: 6em;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   transition: 0.2s;
 }
 
 .projectCard:hover {
   width: 23%;
+  color: #e1d9d1;
   transition: 0.2s;
 }
 
