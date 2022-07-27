@@ -9,17 +9,19 @@ let enemyPoint = 0,
   userPoint = 0;
 
 //Get Game Point
-while (isNaN(gamePoint)) {
+while (isNaN(gamePoint) || !gamePoint) {
   gamePoint = prompt("Game Point:");
 }
 
 const getUserChoice = () => {
-  while (true) {
-    let userChoice = prompt(
-      "What is your move? \r\nRock\r\nPaper\r\nScissors"
-    ).toUpperCase();
-    return userChoice;
+  let userChoice;
+  let isValid = false;
+  while (!isValid) {
+    userChoice = prompt("What is your move? \r\nRock\r\nPaper\r\nScissors");
+    let choice = userChoice.toUpperCase();
+    isValid = CHOICES.includes(choice);
   }
+  return userChoice.toUpperCase();
 };
 
 const getCPUChoice = () => {
@@ -27,15 +29,51 @@ const getCPUChoice = () => {
   return CHOICES[randomChoice];
 };
 
-const checkWinner = (userChoice, cpuChoice) => {};
+function checkWinner(userChoice, cpuChoice) {
+  //USER WIN
+  if (userChoice === "ROCK" && cpuChoice === "SCISSORS") {
+    userPoint++;
+    console.log("USER POINT: " + userPoint);
+    return `You Win! ${userChoice} beats ${cpuChoice}`;
+  } else if (userChoice === "SCISSORS" && cpuChoice === "PAPER") {
+    userPoint++;
+    console.log("USER POINT: " + userPoint);
+    return `You Win! ${userChoice} beats ${cpuChoice}`;
+  } else if (userChoice === "PAPER" && cpuChoice === "ROCK") {
+    userPoint++;
+    console.log("USER POINT: " + userPoint);
+    return `You Win! ${userChoice} beats ${cpuChoice}`;
+  } else if (cpuChoice === "ROCK" && userChoice === "SCISSORS") {
+    //CPU WIN
+    enemyPoint++;
+    console.log("CPU POINT: " + enemyPoint);
+    return `You Lose! ${cpuChoice} beats ${userChoice}`;
+  } else if (cpuChoice === "SCISSORS" && userChoice === "PAPER") {
+    enemyPoint++;
+    console.log("CPU POINT: " + enemyPoint);
+    return `You Lose! ${cpuChoice} beats ${userChoice}`;
+  } else if (cpuChoice === "PAPER" && userChoice === "ROCK") {
+    enemyPoint++;
+    console.log("CPU POINT: " + enemyPoint);
+    return `You Lose! ${cpuChoice} beats ${userChoice}`;
+  } else {
+    return "DRAW!";
+  }
+}
 
 //Game Loop
-// while (true) {
-// if (enemyPoint >= gamePoint || userPoint >= gamePoint) break;
-let userChoice = getUserChoice();
-console.log(`You chose ${userChoice}`);
-let cpuChoice = getCPUChoice();
-console.log(`CPU chose ${cpuChoice}`);
+while (true) {
+  if (userPoint >= gamePoint) {
+    console.log("User Wins!");
+    break;
+  } else if (enemyPoint >= gamePoint) {
+    console.log("CPU Wins!");
+    break;
+  }
+  let userChoice = getUserChoice();
+  console.log(`You chose ${userChoice}`);
+  let cpuChoice = getCPUChoice();
+  console.log(`CPU chose ${cpuChoice}`);
 
-checkWinner(userChoice, cpuChoice);
-// }
+  let winner = checkWinner(userChoice, cpuChoice);
+}
