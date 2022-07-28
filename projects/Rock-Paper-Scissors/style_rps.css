@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+body {
+  background-color: #231955;
+  color: #f6f6f6;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+/*Title Bar*/
+.titleText {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: bold;
+  background-color: #1f4690;
+  padding: 0.75em;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+/*Start Screen*/
+.startScreen {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.startScreen h2 {
+  margin-top: 2em;
+  font-weight: 300;
+  font-size: 3em;
+}
+
+.startScreen button,
+.startScreen input {
+  font-weight: 300;
+  border: none;
+  background-color: #1f4690;
+  color: #f6f6f6;
+  font-size: 1.2em;
+  font-family: "Nunito Sans", sans-serif;
+  transition: 0.2s;
+}
+
+.startScreen button {
+  font-size: 2em;
+  margin-top: 0.5em;
+}
+
+.startScreen button:hover,
+.startScreen input:hover {
+  background-color: rgba(31, 70, 144, 0.75);
+  transition: 0.2s;
+}
+.startScreen button:active,
+.startScreen input:active {
+  background-color: rgba(31, 70, 144, 0.5);
+  transition: 0.2s;
+}
+
+/*Game Screen*/
+.gameScreen {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.75em;
+}
+
+#gameStatus {
+  margin-top: 0.3em;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.gameScreen p {
+  font-weight: 300;
+  font-size: 0.75em;
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+}
+
+.gameScreen p:nth-of-type(4) {
+  margin-bottom: 3em;
+}
+
+.gameField {
+  display: flex;
+}
+
+.gameField img {
+  width: 5em;
+  height: 5em;
+  object-fit: cover;
+  margin-top: 0.25em;
+  transition: 0.2s;
+}
+
+.gameField img:hover {
+  opacity: 0.75;
+  transition: 0.2s;
+}
+.gameField img:active {
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.battleField {
+  font-weight: 300;
+  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5em;
+  margin-right: 5em;
+  justify-content: space-evenly;
+  margin-bottom: 2em;
+  transition: 0.2s;
+}
+
+.statusField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2em;
+  margin: 3em;
+  transition: 0.2s;
+  visibility: hidden;
+}
+
+.moveLeft {
+  transform: translateX(-15em);
+  transition: 0.5s;
+}
+.moveRight {
+  transform: translateX(-15em);
+  transition: 0.5s;
+}

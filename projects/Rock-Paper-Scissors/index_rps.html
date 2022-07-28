@@ -7,6 +7,43 @@
     <link href="style_rps.css" rel="stylesheet" />
   </head>
   <body>
+    <div class="titleText">Rock Paper Scissors</div>
+    <div class="startScreen">
+      <h2>Set Game Point</h2>
+      <p>
+        <input
+          type="number"
+          name="gamePoint"
+          id="gamePoint"
+          value="1"
+          min="1"
+        />
+      </p>
+      <p>
+        <button type="button" id="startGame">Start Game</button>
+      </p>
+    </div>
+    <div class="gameScreen">
+      <p id="gameStatus">Player's Turn</p>
+      <p>Game Point:</p>
+      <p>Player Point</p>
+      <p>CPU Point:</p>
+      <div class="gameField">
+        <div class="battleField">
+          Player Side:
+          <img src="resources/rock.png" alt="rock" id="pRock" />
+          <img src="resources/paper.png" alt="paper" id="pPaper" />
+          <img src="resources/scissors.png" alt="scissors" id="pScissors" />
+        </div>
+        <div class="statusField">Attack</div>
+        <div class="battleField">
+          CPU Side:
+          <img src="resources/rock.png" alt="rock" id="cpuRock" />
+          <img src="resources/paper.png" alt="paper" id="cpuPaper" />
+          <img src="resources/scissors.png" alt="scissors" id="cpuScissors" />
+        </div>
+      </div>
+    </div>
     <script src="script_rps.js"></script>
   </body>
 </html>
