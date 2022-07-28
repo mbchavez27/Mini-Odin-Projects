@@ -67,3 +67,9 @@ body {
   margin-top: 1em;
   font-size: 1.75em;
 }
+
+.battleField img {
+  width: 5em;
+  height: 5em;
+  object-fit: cover;
+}
