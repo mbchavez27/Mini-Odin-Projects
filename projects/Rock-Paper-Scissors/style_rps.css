@@ -6,6 +6,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   padding: 0;
   margin: 0;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 /*Title Bar*/
@@ -17,20 +18,18 @@ body {
   background-color: #1f4690;
   padding: 0.75em;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 /*Start Screen*/
 .startScreen {
-  visibility: visible;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
 .startScreen h2 {
-  margin-top: 3em;
+  margin-top: 2em;
   font-weight: 300;
   font-size: 3em;
 }
@@ -57,4 +56,14 @@ body {
 .startScreen button:active,
 .startScreen input:active {
   background-color: rgba(31, 70, 144, 0.5);
+}
+
+/*Game Screen*/
+.gameScreen {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  font-size: 1.75em;
 }
