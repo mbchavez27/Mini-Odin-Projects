@@ -47,6 +47,7 @@ body {
 
 .startScreen button {
   font-size: 2em;
+  margin-top: 0.5em;
 }
 
 .startScreen button:hover,
