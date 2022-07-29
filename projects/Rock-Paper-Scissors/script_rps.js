@@ -1,5 +1,5 @@
-//To set Game Point
-let gamePoint = 1;
+//To set Game Point and Start the Game
+let gamePoint;
 let startGameButton = document.querySelector("#startGame");
 let startScreen = document.querySelector(".startScreen");
 let setGamePoint = document.querySelector("#gamePoint");
@@ -7,12 +7,16 @@ let gameScreen = document.querySelector(".gameScreen");
 
 startGameButton.addEventListener("click", () => {
   startScreen.style.display = "none";
-  gamePoint = setGamePoint.value;
-  console.log(gamePoint);
   gameScreen.style.display = "flex";
-  return gamePoint;
 });
 
+setGamePoint.addEventListener("change", () => {
+  gamePoint = parseInt(setGamePoint.value);
+  console.log(gamePoint);
+  gamePointCounter.innerHTML = `Game Point: ${gamePoint}`;
+});
+
+//Change Game Status
 let gameStatus = document.querySelector("#gameStatus");
 
 function changeGameStatus(isPlayerTurn) {
@@ -21,15 +25,21 @@ function changeGameStatus(isPlayerTurn) {
   else return (gameStatus.innerHTML = "CPU's Turn");
 }
 
-const move = (moveType) => {
-  moveType.moveReference.classList.add(moveType.moveSide);
-  return moveType.moveName;
-};
+//Game Score Counter
+let playerPoint = 0,
+  cpuPoint = 0;
+let gamePointCounter = document.querySelector("#gamePointCounter");
+let playerPointCounter = document.querySelector("#playerPointCounter");
+let cpuPointCounter = document.querySelector("#cpuPointCounter");
 
-const Rock = {
-  moveReference: document.querySelector("#pRock"),
-  moveName: "ROCK",
-  moveSide: "moveRight",
-};
+playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
+cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
 
-document.querySelector("#pRock").addEventListener("click", move(e, Rock));
+gamePointCounter.addEventListener("click", () => {
+  gameLoop();
+});
+//Game Loop
+function gameLoop() {
+  playerPoint++;
+  console.log(playerPoint);
+}
