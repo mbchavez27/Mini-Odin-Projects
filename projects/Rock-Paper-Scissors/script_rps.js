@@ -1,5 +1,5 @@
 //To set Game Point and Start the Game
-let gamePoint;
+let gamePoint = 1;
 let startGameButton = document.querySelector("#startGame");
 let startScreen = document.querySelector(".startScreen");
 let setGamePoint = document.querySelector("#gamePoint");
@@ -9,7 +9,6 @@ let gameScreen = document.querySelector(".gameScreen");
 startGameButton.addEventListener("click", () => {
   startScreen.style.display = "none";
   gameScreen.style.display = "flex";
-  gameLoop();
 });
 
 //Sets the game points when input change value
@@ -37,6 +36,7 @@ let cpuPointCounter = document.querySelector("#cpuPointCounter");
 //Initialize temporary values
 playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
 cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
+gamePointCounter.innerHTML = `Game Point: ${gamePoint}`;
 
 //Game Loop
 let statusText = document.querySelector(".statusField");
@@ -47,6 +47,33 @@ let isPlayerTurn = true;
 let playerMove;
 let cpuMove;
 
+//CPU Moves
+const cpuMoves = [
+  { reference: document.querySelector("#cpuRock"), name: "ROCK" },
+  {
+    reference: document.querySelector("#cpuPaper"),
+    name: "PAPER",
+  },
+  {
+    reference: document.querySelector("#cpuScissors"),
+    name: "SCISSORS",
+  },
+];
+
+const randomChoice = () => {
+  return Math.floor(Math.random() * 3);
+};
+
+function getCpuMove() {
+  let cpuChoice = randomChoice();
+
+  cpuMoves[cpuChoice].reference.classList.add("moveLeft");
+  cpuMove = cpuMoves[cpuChoice].name;
+  isPlayerTurn = true;
+  changeGameStatus(isPlayerTurn);
+}
+
+//Player Moves
 const playerMoves = {
   rock: document.querySelector("#pRock"),
   paper: document.querySelector("#pPaper"),
@@ -59,6 +86,7 @@ playerMoves.rock.addEventListener("click", () => {
     playerMoves.rock.classList.add("moveRight");
     isPlayerTurn = false;
     changeGameStatus(isPlayerTurn);
+    getCpuMove();
   }
 });
 playerMoves.paper.addEventListener("click", () => {
@@ -67,6 +95,7 @@ playerMoves.paper.addEventListener("click", () => {
     playerMoves.paper.classList.add("moveRight");
     isPlayerTurn = false;
     changeGameStatus(isPlayerTurn);
+    getCpuMove();
   }
 });
 playerMoves.scissors.addEventListener("click", () => {
@@ -75,13 +104,6 @@ playerMoves.scissors.addEventListener("click", () => {
     playerMoves.scissors.classList.add("moveRight");
     isPlayerTurn = false;
     changeGameStatus(isPlayerTurn);
+    getCpuMove();
   }
 });
-
-const cpuMoves = {
-  rock: document.querySelector("#cpuRock"),
-  paper: document.querySelector("#cpuPaper"),
-  scissors: document.querySelector("#cpuScissors"),
-};
-if (!isPLayerTurn) {
-}
