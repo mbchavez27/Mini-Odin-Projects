@@ -122,13 +122,13 @@ body {
 }
 
 .statusField {
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 2em;
   margin: 3em;
   transition: 0.2s;
-  visibility: hidden;
 }
 
 .moveLeft {
@@ -136,6 +136,6 @@ body {
   transition: 0.5s;
 }
 .moveRight {
-  transform: translateX(-15em);
+  transform: translateX(15em);
   transition: 0.5s;
 }
