@@ -38,11 +38,9 @@ playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
 cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
 gamePointCounter.innerHTML = `Game Point: ${gamePoint}`;
 
-//Game Loop
+//Game Loop for the whole game
 let statusText = document.querySelector(".statusField");
 let isPlayerTurn = true;
-
-//game Loop for the whole game
 
 let playerMove;
 let cpuMove;
@@ -69,8 +67,7 @@ function getCpuMove() {
 
   cpuMoves[cpuChoice].reference.classList.add("moveLeft");
   cpuMove = cpuMoves[cpuChoice].name;
-  isPlayerTurn = true;
-  changeGameStatus(isPlayerTurn);
+  checkWinner();
 }
 
 //Player Moves
@@ -107,3 +104,50 @@ playerMoves.scissors.addEventListener("click", () => {
     getCpuMove();
   }
 });
+
+function resetGame() {
+  playerMoves.rock.classList.remove("moveRight");
+  playerMoves.paper.classList.remove("moveRight");
+  playerMoves.scissors.classList.remove("moveRight");
+  cpuMoves[0].reference.classList.remove("moveLeft");
+  cpuMoves[1].reference.classList.remove("moveLeft");
+  cpuMoves[2].reference.classList.remove("moveLeft");
+  isPlayerTurn = true;
+  changeGameStatus(isPlayerTurn);
+  statusText.innerHTML = "Attack";
+  statusText.style.visibility = "hidden";
+}
+
+let gameOver = false;
+function checkWinner() {
+  //Winners
+  if (playerMove === "ROCK" && cpuMove === "SCISSORS") {
+    statusText.style.visibility = "visible";
+    statusText.innerHTML = `You win ${playerMove} beats ${cpuMove}`;
+    playerPoint++;
+    playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
+  }
+  if (cpuMove === "ROCK" && playerMove === "SCISSORS") {
+    statusText.style.visibility = "visible";
+    statusText.innerHTML = `You lose ${cpuMove} beats ${playerMove}`;
+    cpuPoint++;
+    cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
+  }
+
+  //Check Game Point
+  if (playerPoint >= gamePoint) {
+    gameStatus.innerHTML = "Game Over! Player Wins the Game";
+    gameOver = true;
+  }
+  if (cpuPoint >= gamePoint) {
+    gameStatus.innerHTML = "Game Over! CPU Wins the Game";
+    gameOver = true;
+  }
+
+  //Delay then Reset the Game
+  setTimeout(() => {
+    if (!gameOver) {
+      resetGame();
+    }
+  }, 1000);
+}

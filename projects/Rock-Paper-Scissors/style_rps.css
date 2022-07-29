@@ -126,7 +126,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 2em;
+  font-size: 1.2em;
+  position: relative;
   margin: 3em;
   transition: 0.2s;
 }
