@@ -141,7 +141,7 @@ function checkWinner() {
     statusText.innerHTML = `You lose ${cpuMove} beats ${playerMove}`;
     cpuPoint++;
     cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
-  } else if (cpuMove === "SCISSORSS" && playerMove === "PAPER") {
+  } else if (cpuMove === "SCISSORS" && playerMove === "PAPER") {
     statusText.style.visibility = "visible";
     statusText.innerHTML = `You lose ${cpuMove} beats ${playerMove}`;
     cpuPoint++;
