@@ -5,14 +5,16 @@ let startScreen = document.querySelector(".startScreen");
 let setGamePoint = document.querySelector("#gamePoint");
 let gameScreen = document.querySelector(".gameScreen");
 
+//Starts the game by changing game screens
 startGameButton.addEventListener("click", () => {
   startScreen.style.display = "none";
   gameScreen.style.display = "flex";
+  gameLoop();
 });
 
+//Sets the game points when input change value
 setGamePoint.addEventListener("change", () => {
   gamePoint = parseInt(setGamePoint.value);
-  console.log(gamePoint);
   gamePointCounter.innerHTML = `Game Point: ${gamePoint}`;
 });
 
@@ -32,14 +34,54 @@ let gamePointCounter = document.querySelector("#gamePointCounter");
 let playerPointCounter = document.querySelector("#playerPointCounter");
 let cpuPointCounter = document.querySelector("#cpuPointCounter");
 
+//Initialize temporary values
 playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
 cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
 
-gamePointCounter.addEventListener("click", () => {
-  gameLoop();
-});
 //Game Loop
-function gameLoop() {
-  playerPoint++;
-  console.log(playerPoint);
+let statusText = document.querySelector(".statusField");
+let isPlayerTurn = true;
+
+//game Loop for the whole game
+
+let playerMove;
+let cpuMove;
+
+const playerMoves = {
+  rock: document.querySelector("#pRock"),
+  paper: document.querySelector("#pPaper"),
+  scissors: document.querySelector("#pScissors"),
+};
+
+playerMoves.rock.addEventListener("click", () => {
+  if (isPlayerTurn) {
+    playerMove = "ROCK";
+    playerMoves.rock.classList.add("moveRight");
+    isPlayerTurn = false;
+    changeGameStatus(isPlayerTurn);
+  }
+});
+playerMoves.paper.addEventListener("click", () => {
+  if (isPlayerTurn) {
+    playerMove = "PAPER";
+    playerMoves.paper.classList.add("moveRight");
+    isPlayerTurn = false;
+    changeGameStatus(isPlayerTurn);
+  }
+});
+playerMoves.scissors.addEventListener("click", () => {
+  if (isPlayerTurn) {
+    playerMove = "SCISSORS";
+    playerMoves.scissors.classList.add("moveRight");
+    isPlayerTurn = false;
+    changeGameStatus(isPlayerTurn);
+  }
+});
+
+const cpuMoves = {
+  rock: document.querySelector("#cpuRock"),
+  paper: document.querySelector("#cpuPaper"),
+  scissors: document.querySelector("#cpuScissors"),
+};
+if (!isPLayerTurn) {
 }
