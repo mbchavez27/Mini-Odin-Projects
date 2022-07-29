@@ -126,14 +126,35 @@ function checkWinner() {
     statusText.innerHTML = `You win ${playerMove} beats ${cpuMove}`;
     playerPoint++;
     playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
-  }
-  if (cpuMove === "ROCK" && playerMove === "SCISSORS") {
+  } else if (playerMove === "SCISSORS" && cpuMove === "PAPER") {
+    statusText.style.visibility = "visible";
+    statusText.innerHTML = `You win ${playerMove} beats ${cpuMove}`;
+    playerPoint++;
+    playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
+  } else if (playerMove === "PAPER" && cpuMove === "ROCK") {
+    statusText.style.visibility = "visible";
+    statusText.innerHTML = `You win ${playerMove} beats ${cpuMove}`;
+    playerPoint++;
+    playerPointCounter.innerHTML = `Player Point: ${playerPoint}`;
+  } else if (cpuMove === "ROCK" && playerMove === "SCISSORS") {
     statusText.style.visibility = "visible";
     statusText.innerHTML = `You lose ${cpuMove} beats ${playerMove}`;
     cpuPoint++;
     cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
+  } else if (cpuMove === "SCISSORSS" && playerMove === "PAPER") {
+    statusText.style.visibility = "visible";
+    statusText.innerHTML = `You lose ${cpuMove} beats ${playerMove}`;
+    cpuPoint++;
+    cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
+  } else if (cpuMove === "PAPER" && playerMove === "ROCK") {
+    statusText.style.visibility = "visible";
+    statusText.innerHTML = `You lose ${cpuMove} beats ${playerMove}`;
+    cpuPoint++;
+    cpuPointCounter.innerHTML = `CPU Point: ${cpuPoint}`;
+  } else {
+    statusText.style.visibility = "visible";
+    statusText.innerHTML = `DRAW!`;
   }
-
   //Check Game Point
   if (playerPoint >= gamePoint) {
     gameStatus.innerHTML = "Game Over! Player Wins the Game";
