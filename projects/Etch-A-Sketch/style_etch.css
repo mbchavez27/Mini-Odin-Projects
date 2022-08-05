@@ -19,3 +19,18 @@ body {
   padding: 0.75em;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
 }
+
+/*Grid Container */
+.gridContainer {
+  display: flex;
+  justify-content: center;
+  margin: 5em;
+}
+
+/*Grid Box*/
+.gridBox {
+  height: 2em;
+  width: 2em;
+  background-color: white;
+  /* border: 2px solid black; */
+}
