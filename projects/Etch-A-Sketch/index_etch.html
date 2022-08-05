@@ -7,14 +7,31 @@
   </head>
   <body>
     <div class="titleText">Etch a Sketch</div>
-    <input
-      type="range"
-      name="gridSize"
-      id="gridSize"
-      value="16"
-      min="4"
-      max="32"
-    />
+    <div class="settings">
+      <div class="changeSize">
+        <!-- Change Size-->
+        <h2 id="sizeCounter">Size: 16x16</h2>
+        <input
+          type="range"
+          name="gridSize"
+          id="gridSize"
+          value="16"
+          min="16"
+          max="64"
+        />
+      </div>
+      <!--Change Color-->
+      <div class="changeGridColor">
+        <h2 id="colorCounter">Color:</h2>
+        <div class="colors">
+          <button id="color-Red" class="colorChanger">Red</button>
+          <button id="color-Green" class="colorChanger">Green</button>
+          <button id="color-Blue" class="colorChanger">Blue</button>
+          <button id="color-White" class="colorChanger">White</button>
+          <button id="color-Black" class="colorChanger">Black</button>
+        </div>
+      </div>
+    </div>
     <div class="gameCanvas">
       <div class="gridContainer"></div>
     </div>
