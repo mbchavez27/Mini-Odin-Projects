@@ -6,7 +6,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   padding: 0;
   margin: 0;
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.5);
 }
 
 /*Title Bar*/
@@ -21,16 +21,20 @@ body {
 }
 
 /*Grid Container */
-.gridContainer {
+.gameCanvas {
   display: flex;
   justify-content: center;
-  margin: 5em;
+  margin: 1em;
+}
+.gridContainer {
+  display: flex;
+  border: 2px solid red;
 }
 
 /*Grid Box*/
 .gridBox {
-  height: 2em;
-  width: 2em;
+  height: 1em;
+  width: 1em;
   background-color: white;
   /* border: 2px solid black; */
 }

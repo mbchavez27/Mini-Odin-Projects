@@ -2,7 +2,7 @@
 const gridContainer = document.querySelector(".gridContainer");
 //To Change Grid Size
 let gridRange = document.querySelector("#gridSize");
-let gridSize = gridRange.value;
+let gridSize = 32;
 //To Change Grid Color
 let color = "black";
 
@@ -32,11 +32,40 @@ function deleteGrid() {
   rows.forEach((row) => row.remove());
 }
 
+function changeGridSize() {
+  let newSize = 10;
+  if (gridSize <= 32) {
+    newSize = 1.1;
+  }
+  if (gridSize <= 24) {
+    newSize = 1.2;
+  }
+  if (gridSize <= 16) {
+    newSize = 1;
+  }
+  if (gridSize <= 12) {
+    newSize = 1;
+  }
+  if (gridSize <= 8) {
+    newSize = 0.8;
+  }
+  if (gridSize <= 4) {
+    newSize = 0.5;
+  }
+
+  let grids = document.querySelectorAll(".gridBox");
+  grids.forEach((grid) => {
+    grid.style.height = `${newSize}em`;
+    grid.style.width = `${newSize}em`;
+  });
+}
+
 addGrid();
 
 gridRange.addEventListener("change", () => {
   gridSize = gridRange.value;
   deleteGrid();
   addGrid();
-  console.log(rows);
+  changeGridSize();
+  console.log(gridSize);
 });
