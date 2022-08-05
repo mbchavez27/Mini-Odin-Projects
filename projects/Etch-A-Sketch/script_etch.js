@@ -15,7 +15,7 @@ function addGridBox(row) {
     row.appendChild(gridBox);
 
     //Colors each divs
-    gridBox.addEventListener("dragenter", () => {
+    gridBox.addEventListener("mouseover", () => {
       gridBox.style.backgroundColor = color;
     });
   }
