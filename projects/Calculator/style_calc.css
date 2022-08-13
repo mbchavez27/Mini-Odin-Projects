@@ -6,7 +6,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   padding: 0;
   margin: 0;
-  text-shadow: 1px 1px 1em rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0.5em rgba(0, 0, 0, 0.5);
 }
 
 /*Title Bar*/
@@ -29,8 +29,33 @@ body {
 }
 
 .calculator {
+  width: 40vh;
+  height: 60vh;
+  background-color: #393e46;
+  border-radius: 0.5em;
+}
+
+.calculatorInput {
+  background-color: #222831;
+  color: #f1f1f1;
+  border-radius: 0.5em;
+  padding: 2em;
+  font-size: 1.25em;
+}
+
+.calculatorButtons {
   display: flex;
-  width: 500px;
-  height: 500px;
-  background-color: #100f0f;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.calculatorButtons button {
+  background-color: #222831;
+  border: none;
+  color: #e8e8e8;
+  border-radius: 1em;
+  padding: 1em;
+  font-size: 1.45em;
+  margin: 0.2em;
 }
