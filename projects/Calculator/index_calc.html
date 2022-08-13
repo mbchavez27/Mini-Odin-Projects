@@ -11,44 +11,56 @@
     <div class="calculatorContainer">
       <div class="calculator">
         <div class="calculatorInput">
-          <p id="operands">operands</p>
+          <p id="operands"></p>
           <p id="result"></p>
         </div>
         <div class="calculatorButtons">
           <table>
             <tr>
               <td class="nonOperators">
-                <button type="button">↩</button>
+                <button type="button" id="delete">↩</button>
               </td>
               <td class="nonOperators">
                 <button type="button" id="positiveNegative">+/-</button>
               </td>
-              <td class="nonOperators"><button type="button">%</button></td>
-              <td class="operators"><button type="button">÷</button></td>
+              <td class="nonOperators">
+                <button type="button" id="percent">%</button>
+              </td>
+              <td class="operators">
+                <button type="button" id="divide">÷</button>
+              </td>
             </tr>
             <tr>
-              <td><button type="button">7</button></td>
-              <td><button type="button">8</button></td>
-              <td><button type="button">9</button></td>
-              <td class="operators"><button type="button">×</button></td>
+              <td><button type="button" class="numbers">7</button></td>
+              <td><button type="button" class="numbers">8</button></td>
+              <td><button type="button" class="numbers">9</button></td>
+              <td class="operators">
+                <button type="button" id="multiply">×</button>
+              </td>
             </tr>
             <tr>
-              <td><button type="button">4</button></td>
-              <td><button type="button">5</button></td>
-              <td><button type="button">6</button></td>
-              <td class="operators"><button type="button">-</button></td>
+              <td><button type="button" class="numbers">4</button></td>
+              <td><button type="button" class="numbers">5</button></td>
+              <td><button type="button" class="numbers">6</button></td>
+              <td class="operators">
+                <button type="button" id="minus">-</button>
+              </td>
             </tr>
             <tr>
-              <td><button type="button">1</button></td>
-              <td><button type="button">2</button></td>
-              <td><button type="button">3</button></td>
-              <td class="operators"><button type="button">+</button></td>
+              <td><button type="button" class="numbers">1</button></td>
+              <td><button type="button" class="numbers">2</button></td>
+              <td><button type="button" class="numbers">3</button></td>
+              <td class="operators">
+                <button type="button" id="plus">+</button>
+              </td>
             </tr>
             <tr>
-              <td><button type="button">↺</button></td>
-              <td><button type="button">0</button></td>
-              <td><button type="button">.</button></td>
-              <td class="operators"><button type="button">=</button></td>
+              <td><button type="button" id="reset">↺</button></td>
+              <td><button type="button" class="numbers">0</button></td>
+              <td><button type="button" class="numbers">.</button></td>
+              <td class="operators">
+                <button type="button" id="getResult">=</button>
+              </td>
             </tr>
           </table>
         </div>

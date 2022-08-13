@@ -43,7 +43,7 @@ body {
 }
 
 #operands {
-  display: none;
+  visibility: hidden;
   font-size: 1.25em;
   overflow-wrap: break-word;
 }
