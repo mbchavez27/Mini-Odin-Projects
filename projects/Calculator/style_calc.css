@@ -30,7 +30,7 @@ body {
 
 .calculator {
   width: 40vh;
-  height: 60vh;
+  height: auto;
   background-color: #393e46;
   border-radius: 0.5em;
 }
@@ -39,23 +39,57 @@ body {
   background-color: #222831;
   color: #f1f1f1;
   border-radius: 0.5em;
-  padding: 2em;
+  padding: 2.2em;
+}
+
+#operands {
+  display: none;
   font-size: 1.25em;
+  overflow-wrap: break-word;
+}
+
+#result {
+  font-size: 1.5em;
+  overflow-wrap: break-word;
+}
+
+#operands,
+#result {
+  padding-right: 0.5em;
 }
 
 .calculatorButtons {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 1em;
+  margin: 1.5em;
 }
 
 .calculatorButtons button {
   background-color: #222831;
+  color: #f1f1f1;
   border: none;
-  color: #e8e8e8;
   border-radius: 1em;
   padding: 1em;
-  font-size: 1.45em;
+  font-size: 1.5em;
   margin: 0.2em;
+}
+
+.calculatorButtons button:hover {
+  background-color: #141e27;
+}
+.calculatorButtons button:active {
+  background-color: #222831;
+}
+
+.nonOperators button {
+  color: #efb7b7;
+}
+.operators button {
+  color: #d4ecdd;
+}
+#positiveNegative {
+  font-size: 1.3em;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
 }
