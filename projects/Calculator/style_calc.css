@@ -43,13 +43,15 @@ body {
 }
 
 #operands {
-  visibility: hidden;
-  font-size: 1.25em;
+  /* visibility: hidden; */
   overflow-wrap: break-word;
+  text-align: right;
+  font-size: 1.25em;
 }
 
 #result {
-  font-size: 1.5em;
+  padding-top: 0.5em;
+  font-size: 2em;
   overflow-wrap: break-word;
 }
 

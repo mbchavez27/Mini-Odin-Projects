@@ -11,8 +11,12 @@
     <div class="calculatorContainer">
       <div class="calculator">
         <div class="calculatorInput">
-          <p id="operands"></p>
-          <p id="result"></p>
+          <div id="operands">
+            <span id="operator1"></span>
+            <span id="operatorSymbol"></span>
+            <span id="operator2"></span>
+          </div>
+          <div id="result"></div>
         </div>
         <div class="calculatorButtons">
           <table>
@@ -21,10 +25,10 @@
                 <button type="button" id="delete">↩</button>
               </td>
               <td class="nonOperators">
-                <button type="button" id="positiveNegative">+/-</button>
+                <button type="button" id="reset">↺</button>
               </td>
               <td class="nonOperators">
-                <button type="button" id="percent">%</button>
+                <button type="button" id="positiveNegative">+/-</button>
               </td>
               <td class="operators">
                 <button type="button" id="divide">÷</button>
@@ -55,7 +59,7 @@
               </td>
             </tr>
             <tr>
-              <td><button type="button" id="reset">↺</button></td>
+              <td><button type="button" class="numbers">00</button></td>
               <td><button type="button" class="numbers">0</button></td>
               <td><button type="button" class="numbers">.</button></td>
               <td class="operators">
