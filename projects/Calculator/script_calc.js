@@ -8,6 +8,7 @@ let operator1 = document.querySelector("#operator1");
 let operator2 = document.querySelector("#operator2");
 let operatorSymbol = document.querySelector("#operatorSymbol");
 let positiveNegative = document.querySelector("#positiveNegative");
+let decimal = document.querySelector("#decimal");
 const percent = document.querySelector("#percent");
 const reset = document.querySelector("#reset");
 const getResult = document.querySelector("#getResult");
@@ -34,6 +35,21 @@ for (let i = 0; i < numbers.length; i++) {
     }
   });
 }
+
+//Input Decimal
+decimal.addEventListener("click", () => {
+  if (!doneOperation) {
+    if (isOperator1) {
+      if (!operator1.innerHTML.includes(decimal.innerHTML)) {
+        operator1.innerHTML += decimal.innerHTML;
+      }
+    } else {
+      if (!operator2.innerHTML.includes(decimal.innerHTML)) {
+        operator2.innerHTML += decimal.innerHTML;
+      }
+    }
+  }
+});
 
 //Make Positive
 positiveNegative.addEventListener("click", () => {
@@ -140,30 +156,32 @@ divideOperator.addEventListener("click", () => {
 });
 //get Result
 getResult.addEventListener("click", () => {
-  switch (operation) {
-    case "add":
-      result.innerHTML =
-        parseFloat(operator1.innerHTML) + parseFloat(operator2.innerHTML);
-      doneOperation = true;
-      console.log(isOperator1);
-      break;
-    case "minus":
-      result.innerHTML =
-        parseFloat(operator1.innerHTML) - parseFloat(operator2.innerHTML);
-      doneOperation = true;
-      console.log(isOperator1);
-      break;
-    case "multiply":
-      result.innerHTML =
-        parseFloat(operator1.innerHTML) * parseFloat(operator2.innerHTML);
-      doneOperation = true;
-      console.log(isOperator1);
-      break;
-    case "divide":
-      result.innerHTML =
-        parseFloat(operator1.innerHTML) / parseFloat(operator2.innerHTML);
-      doneOperation = true;
-      console.log(isOperator1);
-      break;
+  if (operator2.innerHTML.length > 0) {
+    switch (operation) {
+      case "add":
+        result.innerHTML =
+          parseFloat(operator1.innerHTML) + parseFloat(operator2.innerHTML);
+        doneOperation = true;
+        console.log(isOperator1);
+        break;
+      case "minus":
+        result.innerHTML =
+          parseFloat(operator1.innerHTML) - parseFloat(operator2.innerHTML);
+        doneOperation = true;
+        console.log(isOperator1);
+        break;
+      case "multiply":
+        result.innerHTML =
+          parseFloat(operator1.innerHTML) * parseFloat(operator2.innerHTML);
+        doneOperation = true;
+        console.log(isOperator1);
+        break;
+      case "divide":
+        result.innerHTML =
+          parseFloat(operator1.innerHTML) / parseFloat(operator2.innerHTML);
+        doneOperation = true;
+        console.log(isOperator1);
+        break;
+    }
   }
 });
