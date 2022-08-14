@@ -25,3 +25,14 @@ Demo:
 - You can draw
 - You can change the size of the canvas
 - You can change brush color
+
+### Project #3: Calculator
+
+Demo:
+
+![RPS](ProjectScreenGrabs/calculator.png)
+
+**Features:**
+
+- You can input numbers
+- You can can calculate using the inputted numbers
