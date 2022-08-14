@@ -12,6 +12,11 @@ const percent = document.querySelector("#percent");
 const reset = document.querySelector("#reset");
 const getResult = document.querySelector("#getResult");
 const deleteNum = document.querySelector("#delete");
+let operation = "";
+const addOperator = document.querySelector("#plus");
+const minusOperator = document.querySelector("#minus");
+const multiplyOperator = document.querySelector("#multiply");
+const divideOperator = document.querySelector("#divide");
 
 //input numbers
 for (let i = 0; i < numbers.length; i++) {
@@ -54,52 +59,83 @@ function resetCalculator() {
   isCalcAvailable = false;
   isOperator1 = true;
 }
+
 //delete
-//
-// if (isOperator1) {
-//   deleteNum.addEventListener("click", () => {
-//     operands.innerHTML = operands.innerHTML.substring(
-//       0,
-//       operands.innerHTML.length - 1
-//     );
-//   });
-// } else {
-// }
+deleteNum.addEventListener("click", () => {
+  if (isOperator1) {
+    operator1.innerHTML = operator1.innerHTML.substring(
+      0,
+      operator1.innerHTML.length - 1
+    );
+  } else {
+    if (operator2.innerHTML.length <= 0) {
+      operation = "";
+      operatorSymbol.innerHTML = "";
+      isOperator1 = true;
+    } else {
+      operator2.innerHTML = operator2.innerHTML.substring(
+        0,
+        operator2.innerHTML.length - 1
+      );
+    }
+  }
+});
 
 //Operations
-let operation = "";
-
-const addOperator = document.querySelector("#plus");
-const minusOperator = document.querySelector("#minus");
-const multiplyOperator = document.querySelector("#multiply");
-const divideOperator = document.querySelector("#divide");
-
 addOperator.addEventListener("click", () => {
   if (isCalcAvailable) {
-    operatorSymbol.innerHTML = addOperator.innerHTML;
-    operation = "add";
-    isOperator1 = false;
+    if (!doneOperation) {
+      operatorSymbol.innerHTML = addOperator.innerHTML;
+      operation = "add";
+      isOperator1 = false;
+    } else {
+      operator1.innerHTML = result.innerHTML;
+      operator2.innerHTML = "";
+      result.innerHTML = "";
+      doneOperation = false;
+    }
   }
 });
 minusOperator.addEventListener("click", () => {
   if (isCalcAvailable) {
-    operatorSymbol.innerHTML = minusOperator.innerHTML;
-    operation = "minus";
-    isOperator1 = false;
+    if (!doneOperation) {
+      operatorSymbol.innerHTML = minusOperator.innerHTML;
+      operation = "minus";
+      isOperator1 = false;
+    } else {
+      operator1.innerHTML = result.innerHTML;
+      operator2.innerHTML = "";
+      result.innerHTML = "";
+      doneOperation = false;
+    }
   }
 });
 multiplyOperator.addEventListener("click", () => {
   if (isCalcAvailable) {
-    operatorSymbol.innerHTML = multiplyOperator.innerHTML;
-    operation = "multiply";
-    isOperator1 = false;
+    if (!doneOperation) {
+      operatorSymbol.innerHTML = multiplyOperator.innerHTML;
+      operation = "multiply";
+      isOperator1 = false;
+    } else {
+      operator1.innerHTML = result.innerHTML;
+      operator2.innerHTML = "";
+      result.innerHTML = "";
+      doneOperation = false;
+    }
   }
 });
 divideOperator.addEventListener("click", () => {
   if (isCalcAvailable) {
-    operatorSymbol.innerHTML = divideOperator.innerHTML;
-    operation = "divide";
-    isOperator1 = false;
+    if (!doneOperation) {
+      operatorSymbol.innerHTML = divideOperator.innerHTML;
+      operation = "divide";
+      isOperator1 = false;
+    } else {
+      operator1.innerHTML = result.innerHTML;
+      operator2.innerHTML = "";
+      result.innerHTML = "";
+      doneOperation = false;
+    }
   }
 });
 //get Result
