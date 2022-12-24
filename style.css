@@ -31,6 +31,7 @@ a:hover {
 .projectContainer {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 /*Card*/
 .projectCard {
