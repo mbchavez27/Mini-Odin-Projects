@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+body {
+  background-color: #e2dcc8;
+  color: #f1f1f1;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  text-shadow: 1px 1px 0.5em rgba(0, 0, 0, 0.5);
+}
+
+/*Title Bar*/
+.titleText {
+  background-color: #0f3d3e;
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: bold;
+  padding: 0.75em;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+/*Calculator*/
+.calculatorContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 5em;
+}
+
+.calculator {
+  width: 40vh;
+  height: auto;
+  background-color: #393e46;
+  border-radius: 0.5em;
+}
+
+.calculatorInput {
+  background-color: #222831;
+  color: #f1f1f1;
+  border-radius: 0.5em;
+  padding: 2.2em;
+}
+
+#operands {
+  /* visibility: hidden; */
+  overflow-wrap: break-word;
+  text-align: right;
+  font-size: 1.25em;
+}
+
+#result {
+  padding-top: 0.5em;
+  font-size: 2em;
+  overflow-wrap: break-word;
+}
+
+#operands,
+#result {
+  padding-right: 0.5em;
+}
+
+.calculatorButtons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1.5em;
+}
+
+.calculatorButtons button {
+  background-color: #222831;
+  color: #f1f1f1;
+  border: none;
+  border-radius: 1em;
+  padding: 1em;
+  font-size: 1.5em;
+  margin: 0.2em;
+}
+
+.calculatorButtons button:hover {
+  background-color: #141e27;
+}
+.calculatorButtons button:active {
+  background-color: #222831;
+}
+
+.nonOperators button {
+  color: #efb7b7;
+}
+.operators button {
+  color: #d4ecdd;
+}
+#positiveNegative {
+  font-size: 1.3em;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}

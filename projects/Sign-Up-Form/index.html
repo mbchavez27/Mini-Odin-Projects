@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign-Up Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="resetCSS/reset.css" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="titleBg">
+        <div class="rangyaLogo">
+          <img src="images/faviconWhite.png" alt="rangyaLogo" />
+        </div>
+        <p>Photo by <u>Mick Haupt</u> on <u>Unsplash</u></p>
+      </div>
+      <div class="formRightContent">
+        <div class="rangyaLogoContent">
+          <img src="images/rangyaBlack.png" alt="rangyaLogo" />
+        </div>
+        <div class="formContent">
+          <form>
+            <div class="innerForm">
+              <h1>Let's Do This!</h1>
+              <table class="formTable">
+                <tr>
+                  <td>
+                    <label for="firstName">FIRST NAME</label>
+                  </td>
+                  <td>
+                    <label for="lastName">LAST NAME</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" name="firstName" value="" required />
+                  </td>
+                  <td>
+                    <input type="text" name="firstName" value="" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="emailAdd">EMAIL</label>
+                  </td>
+                  <td>
+                    <label for="phoneNumber">PHONE NUMBER</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="email" name="emailAdd" value="" required />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name="phoneNumber"
+                      value=""
+                      minlength="7"
+                      required
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="password">PASSWORD</label>
+                  </td>
+                  <td>
+                    <label for="confirmPassword">CONFIRM PASSWORD</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="password"
+                      name="password"
+                      value=""
+                      id="newPassword"
+                      required
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      value=""
+                      id="confirmPassword"
+                      required
+                    />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="outerForm">
+              <button type="submit" id="submitButton">CREATE ACCOUNT</button>
+              <p>Already have an account? <a href="">Log in</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

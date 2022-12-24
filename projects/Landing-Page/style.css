@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: #f5f5f5;
+  background-color: #f05454;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Header Part*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  gap: 1em;
+  padding: 0.25em 3em;
+}
+
+.logo img {
+  width: 4em;
+  height: 4em;
+  align-self: center;
+}
+
+.logo p {
+  align-self: center;
+  font-weight: bold;
+  font-size: 1.8em;
+  letter-spacing: 0.25em;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0.25em 3em;
+  gap: 2em;
+  font-size: 1.15em;
+}
+/*Landing Part*/
+.landingPart {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0.25em 3em;
+  margin: 4em 0;
+  gap: 5em;
+  align-items: center;
+}
+
+.landingContent h1 {
+  font-size: 3em;
+  margin: auto;
+  padding: auto;
+}
+
+.landingContent p {
+  font-size: 1em;
+}
+
+.landingContent button {
+  font-family: "Raleway", sans-serif;
+  background-color: #f05454;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25em;
+  border: 2px solid #f5f5f5;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  transition: 0.2s;
+}
+
+.landingContent button:hover {
+  background-color: #f5f5f5;
+  transition: 0.2s;
+  border: 2px solid #f5f5f5;
+  color: #f05454;
+}
+
+.landingPicture img {
+  width: 30em;
+  height: auto;
+}
+
+/* Second Part of Landing Page */
+.landing-2 {
+  background-color: #30475e;
+}
+.landingPart-second {
+  display: flex;
+  flex: 1 1 0%;
+  padding: 1em 3em;
+  margin: 0.5em;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landingContent-Title h1 {
+  font-size: 2em;
+}
+
+.landingContent-Cards {
+  display: flex;
+  gap: 3em;
+  padding: 1.5em 4em;
+  text-align: center;
+}
+
+.landingContent-Card img {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+  border: 2px solid #121212;
+  border-radius: 0.5em;
+  transition: 0.2s;
+}
+
+.landingContent-Card img:hover {
+  width: 15em;
+  height: 15em;
+  transition: 0.2s;
+}
+
+/*Third Part of Landing Page*/
+.landingPart-third {
+  display: flex;
+  flex: 1 1 0%;
+  padding: 0.25em 3em;
+  margin: 4em 0;
+}
+
+.landingContent-Quote {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0.25em 1em;
+}
+
+.landingContent-Quote h1 {
+  font-size: 1.25em;
+}
+
+.landingContent-Quote p {
+  font-size: 1.25em;
+}
+
+/*Fourth Landing Page*/
+.landing-4 {
+  background-color: #30475e;
+}
+.landingPart-fourth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25em 3em;
+  margin: 4em 0;
+  gap: 5em;
+  align-items: center;
+}
+
+.landingContent-Modal {
+  background-color: #121212;
+  border-radius: 0.5em;
+  padding: 2em;
+  margin: 1.5em;
+  display: flex;
+  gap: 3em;
+}
+
+.Modal-Text {
+  padding: 0;
+  margin: 0;
+}
+
+.landingContent-Modal button {
+  font-family: "Raleway", sans-serif;
+  margin: 1.5em;
+  padding: 0.5em 1em;
+  background-color: #121212;
+  border: 2px solid #f5f5f5;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 0.5em;
+  align-self: center;
+  transition: 0.2s;
+}
+
+.landingContent-Modal button:hover {
+  background-color: #f5f5f5;
+  border: 2px solid #121212;
+  color: #121212;
+  transition: 0.2s;
+}
+
+/* Footer */
+footer {
+  background-color: #121212;
+  display: flex;
+  margin-top: auto;
+  min-height: 2em;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25em 0;
+  font-size: 1.15em;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f5f5f5;
+  letter-spacing: 0.15em;
+  transition: 0.2s;
+}
+
+footer a:hover {
+  color: #f05454;
+  transition: 0.2s;
+}
